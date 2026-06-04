@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vauco — Norske AI-moduler som leverer målbar verdi</title>
+<meta name="description" content="Vauco AS bygger AI-moduler for norske bedrifter. CostGuard overvåker GCP- og AWS-kostnader autonomt. Norsk eierskap, GCP-ekspertise, AI uten hype.">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="canonical" href="https://vauco.no/">
+<meta property="og:title" content="Vauco — AI-moduler som leverer målbar verdi">
+<meta property="og:description" content="Norske AI-moduler for bedrifter. CostGuard live nå.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vauco.no/">
+<meta property="og:locale" content="nb_NO">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f;--bg-2:#13131c;--bg-3:#1a1a26;
+  --border:rgba(124,92,255,0.12);--border-2:rgba(124,92,255,0.22);
+  --text:#ececf5;--text-dim:#a8a8c0;--text-faint:#6e6e8a;
+  --accent:#7c5cff;--accent-2:#00d4a8;--cg:#00d4a8;--ts:#a78bfa;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.gradient{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Nav */
+header{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;height:64px;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:-.02em}
+.brand-mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-mark svg{stroke:#0a0a0f;width:17px;height:17px}
+.nav-links{margin-left:auto;display:flex;align-items:center;gap:28px}
+.nav-links a{font-size:14px;color:var(--text-dim);font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{padding:9px 18px;border-radius:10px;background:var(--accent);color:#fff !important;font-weight:600 !important;font-size:14px;transition:background .15s}
+.nav-cta:hover{background:#6a4dee}
+.nav-toggle{display:none;margin-left:auto;background:none;border:1px solid var(--border-2);border-radius:8px;width:40px;height:40px;color:var(--text);font-size:20px;cursor:pointer}
+
+/* Hero */
+.hero{padding:96px 0 72px;text-align:center;position:relative}
+.hero::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:680px;height:680px;max-width:120vw;background:radial-gradient(circle,rgba(124,92,255,0.16),transparent 62%);pointer-events:none;z-index:-1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;border:1px solid var(--border-2);background:var(--bg-2);font-size:12.5px;font-family:var(--mono);color:var(--text-dim);margin-bottom:28px}
+.hero-tag .pulse{width:7px;height:7px;border-radius:50%;background:var(--accent-2);position:relative}
+.hero-tag .pulse::after{content:"";position:absolute;inset:-3px;border-radius:50%;background:var(--accent-2);opacity:.4;animation:pulse 2s infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.4}100%{transform:scale(2.6);opacity:0}}
+.hero h1{font-size:clamp(34px,6vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:22px}
+.hero p{font-size:clamp(16px,2.4vw,20px);color:var(--text-dim);max-width:620px;margin:0 auto 36px}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{padding:13px 26px;border-radius:12px;font-weight:600;font-size:15px;transition:all .15s;display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#6a4dee;transform:translateY(-1px)}
+.btn-ghost{background:var(--bg-2);border-color:var(--border-2);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:#fff}
+
+/* Sections */
+section{padding:72px 0}
+.sec-label{font-family:var(--mono);font-size:12.5px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.sec-title{font-size:clamp(26px,4vw,38px);font-weight:700;letter-spacing:-.02em;margin-bottom:16px;line-height:1.15}
+.sec-intro{color:var(--text-dim);max-width:600px;font-size:17px;margin-bottom:44px}
+
+/* Module grid */
+.modules{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mod{background:var(--bg-2);border:1px solid var(--border);border-radius:18px;padding:28px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.mod:hover{border-color:var(--border-2);transform:translateY(-3px)}
+.mod-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.mod-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center}
+.mod-icon svg{width:23px;height:23px}
+.mi-cg{background:rgba(0,212,168,0.13)}.mi-cg svg{stroke:var(--cg)}
+.mi-ts{background:rgba(167,139,250,0.13)}.mi-ts svg{stroke:var(--ts)}
+.mi-next{background:rgba(124,92,255,0.1)}.mi-next svg{stroke:var(--accent)}
+.mod-status{font-family:var(--mono);font-size:11px;font-weight:600;padding:4px 11px;border-radius:99px;letter-spacing:.04em}
+.st-live{background:rgba(0,212,168,0.14);color:var(--cg)}
+.st-soon{background:rgba(167,139,250,0.14);color:var(--ts)}
+.st-plan{background:rgba(124,92,255,0.12);color:var(--accent)}
+.mod h3{font-size:21px;font-weight:700;margin-bottom:10px}
+.mod p{color:var(--text-dim);font-size:14.5px;flex:1;margin-bottom:20px}
+.mod-link{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.mod-link .dim{color:var(--text-faint)}
+.mod-link.disabled{color:var(--text-faint);cursor:default}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why-card{padding:4px}
+.why-num{font-family:var(--mono);font-size:13px;color:var(--accent);margin-bottom:14px}
+.why-card h4{font-size:18px;font-weight:700;margin-bottom:10px}
+.why-card p{color:var(--text-dim);font-size:15px}
+
+/* About */
+.about{background:var(--bg-2);border:1px solid var(--border);border-radius:20px;padding:44px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.about p{color:var(--text-dim);font-size:16px;margin-bottom:16px}
+.about-facts{display:flex;flex-direction:column;gap:14px}
+.fact{display:flex;flex-direction:column;gap:2px}
+.fact-k{font-family:var(--mono);font-size:11.5px;color:var(--text-faint);letter-spacing:.05em;text-transform:uppercase}
+.fact-v{font-size:16px;font-weight:600}
+
+/* Contact */
+.contact{text-align:center;background:radial-gradient(circle at 50% 0%,rgba(124,92,255,0.1),transparent 60%)}
+.contact .btn{margin-top:8px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:40px 0 48px;margin-top:40px}
+.foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;align-items:flex-start}
+.foot-org{font-family:var(--mono);font-size:12.5px;color:var(--text-faint);line-height:1.9}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap}
+.foot-links a{font-size:13.5px;color:var(--text-dim)}
+.foot-links a:hover{color:var(--text)}
+
+@media(max-width:860px){
+  .modules,.why-grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;padding:28px;gap:28px}
+  .nav-links{position:fixed;top:64px;left:0;right:0;flex-direction:column;background:var(--bg-2);border-bottom:1px solid var(--border);padding:16px 24px;gap:18px;align-items:flex-start;transform:translateY(-130%);transition:transform .28s;z-index:90}
+  .nav-links.open{transform:translateY(0)}
+  .nav-toggle{display:flex;align-items:center;justify-content:center}
+  .nav-cta{width:100%;text-align:center}
+  section{padding:54px 0}
+  .hero{padding:64px 0 48px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand">
+      <span class="brand-mark"><svg viewBox="0 0 20 20" fill="none" stroke-width="1.6"><polygon points="10,1.5 17.5,5.5 17.5,14.5 10,18.5 2.5,14.5 2.5,5.5"/><circle cx="10" cy="10" r="2.4" fill="#0a0a0f"/></svg></span>
+      Vauco
+    </a>
+    <button class="nav-toggle" onclick="document.getElementById('navlinks').classList.toggle('open')" aria-label="Meny">☰</button>
+    <nav class="nav-links" id="navlinks">
+      <a href="#moduler" onclick="closeNav()">Moduler</a>
+      <a href="#hvorfor" onclick="closeNav()">Hvorfor Vauco</a>
+      <a href="#om-oss" onclick="closeNav()">Om oss</a>
+      <a href="#kontakt" class="nav-cta" onclick="closeNav()">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="hero-tag"><span class="pulse"></span>CostGuard er live nå</span>
+    <h1>AI-moduler som leverer <span class="gradient">målbar verdi</span></h1>
+    <p>Vauco bygger fokuserte AI-moduler for norske bedrifter. Ingen hype — bare verktøy som gjør en konkret jobb, drevet av solid GCP-ekspertise og norsk eierskap.</p>
+    <div class="hero-cta">
+      <a href="#moduler" class="btn btn-primary">Se modulene</a>
+      <a href="#kontakt" class="btn btn-ghost">Ta kontakt</a>
+    </div>
+  </div>
+</section>
+
+<section id="moduler">
+  <div class="wrap">
+    <div class="sec-label">Moduler</div>
+    <h2 class="sec-title">Det vi selger</h2>
+    <p class="sec-intro">Hver modul er et selvstendig produkt med sin egen produktside. Du kjøper det du trenger.</p>
+    <div class="modules">
+      <article class="mod">
+        <div class="mod-top">
+          <div class="mod-icon mi-cg"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+          <span class="mod-status st-live">● LIVE</span>
+        </div>
+        <h3>CostGuard</h3>
+        <p>Autonom kostnadsovervåking for GCP og AWS. AI-anomalideteksjon, budsjettvarsler, prognoser og CSV/PDF-eksport — så du aldri blir overrasket av skyregningen.</p>
+        <a class="mod-link" href="https://costguard.oss.vauco.no">Åpne CostGuard <span class="dim">→ costguard.oss.vauco.no</span></a>
+      </article>
+      <article class="mod">
+        <div class="mod-top">
+          <div class="mod-icon mi-ts"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <span class="mod-status st-soon">KOMMER SNART</span>
+        </div>
+        <h3>Threadstone</h3>
+        <p>Kundeskreddersydd AI-salgsassistent. Landingsside er live, appen er under utvikling og går i pilot i løpet av 2026.</p>
+        <a class="mod-link" href="https://threadstone.vauco.no">Les mer <span class="dim">→ threadstone.vauco.no</span></a>
+      </article>
+      <article class="mod">
+        <div class="mod-top">
+          <div class="mod-icon mi-next"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17.5 14v7M14 17.5h7"/></svg></div>
+          <span class="mod-status st-plan">PLANLAGT</span>
+        </div>
+        <h3>Flere kommer</h3>
+        <p>Vi bygger nye moduler basert på reelle behov hos norske bedrifter. Vil du være tidlig ute? Gi oss et hint om hva du sliter med.</p>
+        <a class="mod-link" href="#kontakt">Foreslå en modul <span class="dim">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="sec-label">Hvorfor Vauco</div>
+    <h2 class="sec-title">Tre grunner til å stole på oss</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <h4>Norsk eierskap</h4>
+        <p>Vauco AS er norskeid og norskdrevet. Dine data og din kontrakt holder seg innenfor rammer du forstår, med en operatør du kan ringe.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <h4>GCP-ekspertise</h4>
+        <p>Vi bygger på Google Cloud med isolerte kundeinstanser og streng tilgangskontroll. Infrastruktur som er bygget for å holdes oversiktlig og trygg.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <h4>AI som ikke er hype</h4>
+        <p>Vi lover ikke magi. Hver modul løser én konkret oppgave og viser deg målbar verdi — eller så er den ikke verdt å selge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="om-oss">
+  <div class="wrap">
+    <div class="sec-label">Om oss</div>
+    <h2 class="sec-title">Hvem står bak</h2>
+    <div class="about">
+      <div>
+        <p>Vauco AS er et norsk teknologiselskap som bygger og drifter AI-moduler for bedrifter. Vi er en operatør, ikke et VC-finansiert startup — rolig, kompetent og fokusert på å levere verktøy som faktisk brukes.</p>
+        <p>Selskapet ledes av Chris Christiansen og holder til i Oslo.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact"><span class="fact-k">Selskap</span><span class="fact-v">Vauco AS</span></div>
+        <div class="fact"><span class="fact-k">Org.nr</span><span class="fact-v">935 989 779</span></div>
+        <div class="fact"><span class="fact-k">Lokasjon</span><span class="fact-v">Oslo, Norge</span></div>
+        <div class="fact"><span class="fact-k">Daglig leder</span><span class="fact-v">Chris Christiansen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <div class="wrap">
+    <div class="sec-label">Kontakt</div>
+    <h2 class="sec-title">La oss ta en prat</h2>
+    <p class="sec-intro" style="margin:0 auto 28px">Lurer du på om en av modulene passer for din bedrift? Send en e-post, så svarer vi.</p>
+    <a href="mailto:chris.christiansen@vauco.no?subject=Henvendelse%20fra%20vauco.no" class="btn btn-primary">chris.christiansen@vauco.no</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-org">
+      Vauco AS · Org.nr 935 989 779<br>
+      Oslo, Norge<br>
+      © 2026 Vauco AS
+    </div>
+    <nav class="foot-links">
+      <a href="/personvern.html">Personvern</a>
+      <a href="/vilkar.html">Vilkår</a>
+      <a href="https://costguard.oss.vauco.no">CostGuard</a>
+      <a href="https://threadstone.vauco.no">Threadstone</a>
+      <a href="mailto:chris.christiansen@vauco.no">Kontakt</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+function closeNav(){document.getElementById('navlinks').classList.remove('open');}
+</script>
+</body>
+</html>
