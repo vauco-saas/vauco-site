@@ -224,13 +224,12 @@ footer{border-top:1px solid var(--border);padding:40px 0 48px;margin-top:40px}
     <div class="about">
       <div>
         <p>Vauco AS er et norsk teknologiselskap som bygger og drifter AI-moduler for bedrifter. Vi er en operatør, ikke et VC-finansiert startup — rolig, kompetent og fokusert på å levere verktøy som faktisk brukes.</p>
-        <p>Selskapet ledes av Chris Christiansen og holder til i Oslo.</p>
+        <p>Selskapet holder til i Oslo.</p>
       </div>
       <div class="about-facts">
         <div class="fact"><span class="fact-k">Selskap</span><span class="fact-v">Vauco AS</span></div>
         <div class="fact"><span class="fact-k">Org.nr</span><span class="fact-v">935 989 779</span></div>
         <div class="fact"><span class="fact-k">Lokasjon</span><span class="fact-v">Oslo, Norge</span></div>
-        <div class="fact"><span class="fact-k">Daglig leder</span><span class="fact-v">Chris Christiansen</span></div>
       </div>
     </div>
   </div>
@@ -240,8 +239,8 @@ footer{border-top:1px solid var(--border);padding:40px 0 48px;margin-top:40px}
   <div class="wrap">
     <div class="sec-label">Kontakt</div>
     <h2 class="sec-title">La oss ta en prat</h2>
-    <p class="sec-intro" style="margin:0 auto 28px">Lurer du på om en av modulene passer for din bedrift? Send en e-post, så svarer vi.</p>
-    <a href="mailto:chris.christiansen@vauco.no?subject=Henvendelse%20fra%20vauco.no" class="btn btn-primary">chris.christiansen@vauco.no</a>
+    <p class="sec-intro" style="margin:0 auto 28px">Lurer du på om en av modulene passer for din bedrift? Send oss en kort beskrivelse av situasjonen din, så svarer vi.</p>
+    <button class="btn btn-primary" type="button" onclick="openContact()">Send forespørsel</button>
   </div>
 </section>
 </main>
@@ -258,13 +257,19 @@ footer{border-top:1px solid var(--border);padding:40px 0 48px;margin-top:40px}
       <a href="/vilkar.html">Vilkår</a>
       <a href="https://costguard.oss.vauco.no">CostGuard</a>
       <a href="https://threadstone.vauco.no">Threadstone</a>
-      <a href="mailto:chris.christiansen@vauco.no">Kontakt</a>
     </nav>
   </div>
 </footer>
 
 <script>
 function closeNav(){document.getElementById('navlinks').classList.remove('open');}
+
+function openContact(){
+  const subject = encodeURIComponent('Henvendelse fra vauco.no');
+  const body = encodeURIComponent('Hei,\n\nJeg er interessert i å høre mer om modulene deres.\n\nBedrift: \nKort om behovet: \n\nVennlig hilsen\n');
+  // Kontakt går til Jason. Server-side (IAP/IAM) kan senere utvides med BCC til Chris.
+  window.location.href = `mailto:contact@vauco.no?subject=${subject}&body=${body}`;
+}
 </script>
 </body>
 </html>
